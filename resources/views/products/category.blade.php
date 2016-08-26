@@ -65,8 +65,8 @@
                             <h2><a href="/products/{{$product->id}}">{{ucwords($product->name)}}</a></h2>
                             <div>
                                 <a href="/products/{{$product->id}}"><img
-                                            src="{{env('QINIU_DOMAIN').$product->categorypic}}?imageView2/2/w/234/h/300"
-                                            alt="{{$product->name}}"></a>
+                                            src="/{{$product->categorypic}}"
+                                            alt="{{$product->name}}" width="234" height="300"></a>
                                 <ul>
                                     {!! $product->categorypara !!}
                                 </ul>

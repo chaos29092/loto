@@ -9,7 +9,7 @@
     @if($news->first()->tag =='news'){{trans('keywords.news_keywords')}}@else {{trans('keywords.cases_keywords')}} @endif
 @stop
 
-    @section('content')
+@section('content')
     <div class="fullwidth-area grid-100 tablet-grid-100 mobile-grid-100 grid-parent"></div>
     <!-- Content Area -->
     <div class="content-area sidebar-column grid-parent grid-25 tablet-grid-25 hide-on-mobile">
@@ -31,8 +31,8 @@
                     @foreach($news as $new)
                         <li>
                             <div class="image">
-                                <img src="{{env('QINIU_DOMAIN').$new->image}}?imageView2/2/w/180/h/180"
-                                     alt="{{$new->title}}">
+                                <img src="/{{$new['image']}}"
+                                     alt="{{$new->title}}" width="180">
                             </div>
                             <div class="information">
                                 <h2><a href="/news/{{$new->id}}">{{ucwords($new->title)}}</a></h2>
@@ -44,8 +44,8 @@
                         </li>
                     @endforeach
                     {{$news->render()}}
-                        </ul>
-                    </div>
-                </div>
+                </ul>
             </div>
+        </div>
+    </div>
 @stop

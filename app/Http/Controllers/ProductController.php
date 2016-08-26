@@ -9,6 +9,7 @@ use App\Http\Requests;
 use Qiniu\Storage\UploadManager;
 use Qiniu\Auth as QiniuAuth;
 use Qiniu\Storage\BucketManager;
+use Storage;
 
 
 class ProductController extends Controller
@@ -61,31 +62,26 @@ class ProductController extends Controller
         $product->categorypara = $request->categorypara;
         $product->category_id = $request->category_id;
 
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $token = $auth->uploadToken($bucket);
+
 
         if ($request->file('mainpic')) {
 
             $filePath = $request->file('mainpic');
             $entension = $filePath->getClientOriginalExtension();
-            $key = 'product_' . $request->name . '.'.$entension;
-            $uploadMgr = new UploadManager();
-            $uploadMgr->putFile($token, $key, $filePath);
+            $key = 'product/' . $request->name . '.'.$entension;
 
-            $product->mainpic = $key;
+            Storage::put($key,file_get_contents($request->file('mainpic')->getRealPath()));
+
+            $product->mainpic = 'app/'.$key;
         }
         if ($request->file('categorypic')) {
 
             $filePath = $request->file('categorypic');
             $entension = $filePath->getClientOriginalExtension();
-            $key = 'product_' . $request->name . '_category.'.$entension;
-            $uploadMgr = new UploadManager();
-            $uploadMgr->putFile($token, $key, $filePath);
+            $key = 'product/' . $request->name . '_category.'.$entension;
 
-            $product->categorypic = $key;
+            Storage::put($key,file_get_contents($request->file('categorypic')->getRealPath()));
+            $product->categorypic = 'app/'.$key;
         }
 
         $product->save();
@@ -98,20 +94,7 @@ class ProductController extends Controller
         $product = \App\Product::find($id);
         $categories = \App\Category::all();
 
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $bucketMgr = new BucketManager($auth);
-        $key1 = $product->mainpic;
-        $key2 = $product->categorypic;
-
-        list($ret1, $err1) = $bucketMgr->stat($bucket, $key1);
-        $mainpic = !$err1;
-        list($ret2, $err2) = $bucketMgr->stat($bucket, $key2);
-        $categorypic=!$err2;
-
-        return view('admin.product_edit', ['product' => $product,'categories'=>$categories,'models'=>$models,'mainpic'=>$mainpic,'categorypic'=>$categorypic]);
+        return view('admin.product_edit', ['product' => $product,'categories'=>$categories,'models'=>$models]);
     }
 
     public function update(Request $request, $id)
@@ -134,31 +117,24 @@ class ProductController extends Controller
         $product->categorypara = $request->categorypara;
         $product->category_id = $request->category_id;
 
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $token = $auth->uploadToken($bucket);
-
         if ($request->file('mainpic')) {
 
             $filePath = $request->file('mainpic');
             $entension = $filePath->getClientOriginalExtension();
-            $key = 'product_' . $request->name . '.'.$entension;
-            $uploadMgr = new UploadManager();
-            $uploadMgr->putFile($token, $key, $filePath);
+            $key = 'product/' . $request->name . '.'.$entension;
 
-            $product->mainpic = $key;
+            Storage::put($key,file_get_contents($request->file('mainpic')->getRealPath()));
+            $product->mainpic = 'app/'.$key;
         }
         if ($request->file('categorypic')) {
 
             $filePath = $request->file('categorypic');
             $entension = $filePath->getClientOriginalExtension();
-            $key = 'product_' . $request->name . '_category.'.$entension;
-            $uploadMgr = new UploadManager();
-            $uploadMgr->putFile($token, $key, $filePath);
+            $key = 'product/' . $request->name . '_category.'.$entension;
 
-            $product->categorypic = $key;
+            Storage::put($key,file_get_contents($request->file('categorypic')->getRealPath()));
+
+            $product->categorypic = 'app/'.$key;
         }
 
 
@@ -170,16 +146,12 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = \App\Product::find($id);
-
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $bucketMgr = new BucketManager($auth);
-        $key = $product->mainpic;
-        $key2 = $product->categorypic;
-        $bucketMgr->delete($bucket, $key);
-        $bucketMgr->delete($bucket, $key2);
+        if ($product['mainpic']){
+            Storage::delete(str_replace("app/","",$product['mainpic']));
+        }
+        if ($product['categorypic']){
+            Storage::delete(str_replace("app/","",$product['categorypic']));
+        }
         $product->delete();
         $models = \App\ProductModel::where('product_id',$id)->delete();
         return redirect('/admin');

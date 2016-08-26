@@ -12,10 +12,10 @@
 @section('breadcrumbs')
     <li><a href="/products/category/{{$category_this->id}}">{{$category_this['name']}}</a></li>
     <li><a href="">{{$product_this['name']}}</a></li>
-    @stop
+@stop
 
-    @section('content')
-            <!-- Full-Width Area -->
+@section('content')
+    <!-- Full-Width Area -->
     <div class="fullwidth-area grid-100 tablet-grid-100 mobile-grid-100 grid-parent"></div>
 
     <!-- Content Area -->
@@ -47,7 +47,8 @@
                 <h1 class="first">{{ucwords($product_this->name)}}</h1>
 
                 <ul class="tabs">
-                    <li class="current"><a href="/products/{{$product_this->id}}">{{trans('home.features_options')}}</a></li>
+                    <li class="current"><a href="/products/{{$product_this->id}}">{{trans('home.features_options')}}</a>
+                    </li>
                     <li><a href="/products/{{$product_this->id}}/models">{{trans('home.technical_details')}}</a>
                     </li>
                 </ul>
@@ -68,14 +69,14 @@
                             <div class="media">
                                 <a class="zoom image" rel="product_images"
                                    data-id="products-{{$product_this->id}}" title="{{$product_this->name}}"
-                                   href="{{env('QINIU_DOMAIN').$product_this->mainpic}}"><img
-                                            src="{{env('QINIU_DOMAIN').$product_this->mainpic}}?imageView2/0/w/220"></a>
+                                   href="/{{$product_this['mainpic']}}"><img
+                                            src="/{{$product_this['mainpic']}}" alt="{{$product_this['name']}}"></a>
 
                                 <div class="zoomIcon"></div>
                             </div>
                             <div class="thumbnails image">
                                 <img data-id="products-{{$product_this->id}}"
-                                     src="{{env('QINIU_DOMAIN').$product_this->mainpic}}?imageView2/0/w/60">
+                                     src="/{{$product_this['mainpic']}}" width="220" alt="{{$product_this['name']}}">
                             </div>
                             <div class="thumbnails video">
 
@@ -96,11 +97,13 @@
                         {!! $product_this->options !!}
                     </ul>
 
-                    <p><small>{{trans('home.modifications')}}<br> {{trans('home.have_question')}}</small>
+                    <p>
+                        <small>{{trans('home.modifications')}}<br> {{trans('home.have_question')}}</small>
                         <a href="mailto:info@furnace-tech.com">info@furnace-tech.com</a></p>
 
                 </div>
-                <div class="tab-loading"></div></div>
+                <div class="tab-loading"></div>
+            </div>
         </div>
     </div>
 @stop

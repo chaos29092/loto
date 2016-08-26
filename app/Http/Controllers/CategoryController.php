@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Qiniu\Storage\UploadManager;
 use Qiniu\Auth as QiniuAuth;
 use Qiniu\Storage\BucketManager;
+use Storage;
 
 class CategoryController extends Controller
 {
@@ -55,31 +56,25 @@ class CategoryController extends Controller
         $category->max_temp = $request->max_temp;
         $category->description = $request->description;
 
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $token = $auth->uploadToken($bucket);
-
         if ($request->file('main_pic')) {
 
             $filePath = $request->file('main_pic');
             $entension = $filePath->getClientOriginalExtension();
-            $key = 'category_' . $request->name . '.'.$entension;
-            $uploadMgr = new UploadManager();
-            $uploadMgr->putFile($token, $key, $filePath);
+            $key = 'category/' . $request->name . '.'.$entension;
 
-            $category->main_pic = $key;
+            Storage::put($key,file_get_contents($request->file('main_pic')->getRealPath()));
+
+            $category->main_pic = 'app/'.$key;
         }
         if ($request->file('banner')) {
 
             $filePath = $request->file('banner');
             $entension = $filePath->getClientOriginalExtension();
-            $key = 'category_banner_' . $request->name . '.'.$entension;
-            $uploadMgr = new UploadManager();
-            $uploadMgr->putFile($token, $key, $filePath);
+            $key = 'category/banner_' . $request->name . '.'.$entension;
 
-            $category->banner = $key;
+            Storage::put($key,file_get_contents($request->file('banner')->getRealPath()));
+
+            $category->banner = 'app/'.$key;
         }
 
         $category->save();
@@ -108,21 +103,7 @@ class CategoryController extends Controller
 
         $category = \App\Category::find($id);
 
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $bucketMgr = new BucketManager($auth);
-        $key1 = $category->main_pic;
-        $key2 = $category->banner;
-
-        list($ret1, $err1) = $bucketMgr->stat($bucket, $key1);
-        $main_pic = !$err1;
-        list($ret2, $err2) = $bucketMgr->stat($bucket, $key2);
-        $banner=!$err2;
-        
-        
-        return view('admin.category_edit',['category'=>$category,'main_pic'=>$main_pic,'banner'=>$banner]);
+        return view('admin.category_edit',['category'=>$category]);
     }
 
     /**
@@ -145,31 +126,25 @@ class CategoryController extends Controller
         $category->max_temp = $request->max_temp;
         $category->description = $request->description;
 
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $token = $auth->uploadToken($bucket);
-
         if ($request->file('main_pic')) {
 
             $filePath = $request->file('main_pic');
             $entension = $filePath->getClientOriginalExtension();
-            $key = 'category_' . $request->name . '.'.$entension;
-            $uploadMgr = new UploadManager();
-            $uploadMgr->putFile($token, $key, $filePath);
+            $key = 'category/' . $request->name . '.'.$entension;
 
-            $category->main_pic = $key;
+            Storage::put($key,file_get_contents($request->file('main_pic')->getRealPath()));
+
+            $category->main_pic = 'app/'.$key;
         }
         if ($request->file('banner')) {
 
             $filePath = $request->file('banner');
             $entension = $filePath->getClientOriginalExtension();
-            $key = 'category_banner_' . $request->name . '_'.$entension;
-            $uploadMgr = new UploadManager();
-            $uploadMgr->putFile($token, $key, $filePath);
+            $key = 'category/banner_' . $request->name . '_'.$entension;
 
-            $category->banner = $key;
+            Storage::put($key,file_get_contents($request->file('banner')->getRealPath()));
+
+            $category->banner = 'app/'.$key;
         }
 
         $category->save();
@@ -185,15 +160,12 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = \App\Category::find($id);
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $bucketMgr = new BucketManager($auth);
-        $key = $category->main_pic;
-        $key2 = $category->banner;
-        $bucketMgr->delete($bucket, $key);
-        $bucketMgr->delete($bucket, $key2);
+        if ($category['main_pic']){
+            Storage::delete(str_replace("app/","",$category['main_pic']));
+        }
+        if ($category['banner']){
+            Storage::delete(str_replace("app/","",$category['banner']));
+        }
         $category->delete();
         return redirect('/admin/categories');
     }

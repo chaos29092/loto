@@ -25,8 +25,8 @@
                     <div class="form-group">
                         <label for="newImage">主图，最大200*250,.jpg格式，只能新添加，不能修改，如修改，删除新闻重新建</label>
                         <input name="image" type="file" />
-                        @if($image)
-                            <img src="{{env('QINIU_DOMAIN').$new['image']}}?imageView2/0/w/200/h/200" alt="{{$new['title']}}">
+                        @if($new['image'])
+                            <img src="/{{($new['image'])}}" alt="{{$new['title']}}" width="200" height="250">
                         @endif
                     </div>
 

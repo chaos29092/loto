@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Qiniu\Storage\UploadManager;
 use Qiniu\Auth as QiniuAuth;
 use Qiniu\Storage\BucketManager;
+use Storage;
 
 class TheNewController extends Controller
 {
@@ -55,20 +56,14 @@ class TheNewController extends Controller
         $new->body = $request->body;
         $new->tag = $request->tag;
 
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $token = $auth->uploadToken($bucket);
-
         if ($request->file('image')) {
             $filePath = $request->file('image');
             $entension = $filePath->getClientOriginalExtension();
-            $key = 'new_'.$request->title.'.'.$entension;
-            $uploadMgr = new UploadManager();
-            $uploadMgr->putFile($token, $key, $filePath);
+            $key = 'news/'.$request->title.'.'.$entension;
 
-            $new->image =  $key;
+            Storage::put($key,file_get_contents($request->file('image')->getRealPath()));
+
+            $new->image =  'app/'.$key;
         }
 
         $new->save();
@@ -97,18 +92,8 @@ class TheNewController extends Controller
     public function edit($id)
     {
         $new = \App\TheNew::find($id);
-
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $bucketMgr = new BucketManager($auth);
-        $key = $new->image;
-
-        list($ret, $err) = $bucketMgr->stat($bucket, $key);
-        $image = !$err;
         
-        return view('admin.new_edit',['new'=>$new,'image'=>$image]);
+        return view('admin.new_edit',['new'=>$new]);
     }
 
     /**
@@ -131,21 +116,14 @@ class TheNewController extends Controller
         $new->body = $request->body;
         $new->tag = $request->tag;
 
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $token = $auth->uploadToken($bucket);
-
         if ($request->file('image')) {
-
             $filePath = $request->file('image');
             $entension = $filePath->getClientOriginalExtension();
-            $key = 'new_'.$request->title.'.'.$entension;
-            $uploadMgr = new UploadManager();
-            $uploadMgr->putFile($token, $key, $filePath);
+            $key = 'news/'.$request->title.'.'.$entension;
 
-            $new->image = $key;
+            Storage::put($key,file_get_contents($request->file('image')->getRealPath()));
+
+            $new->image =  'app/'.$key;
         }
 
         $new->save();
@@ -163,16 +141,9 @@ class TheNewController extends Controller
     {
         $new = \App\TheNew::find($id);
 
-        $accessKey = \Config::get('filesystems.disks.qiniu.access_key');
-        $secretKey = \Config::get('filesystems.disks.qiniu.secret_key');
-        $bucket = \Config::get('filesystems.disks.qiniu.bucket');
-        $auth = new QiniuAuth($accessKey, $secretKey);
-        $bucketMgr = new BucketManager($auth);
-
-        $token = $auth->uploadToken($bucket);
-        $key = $new->image;
-        $bucketMgr->delete($bucket, $key);
-
+        if ($new['image']){
+            Storage::delete(str_replace("app/","",$new['image']));
+        }
         $new->delete();
         return redirect('/admin/new');
 

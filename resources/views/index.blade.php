@@ -19,21 +19,21 @@
                 <div class="slideshow" data-speed="1600" data-interval="5000">
 
                     <div class="item"><a href="/products/category/1"><img
-                                    src="{{env('QINIU_DOMAIN')}}banner1.jpg">
+                                    src="/images/banner1.jpg">
 
                             <div class="overlay textright"><span class="headline">50~1700C Laboratory <br>Muffle Furnace</span><span
                                         class="subline">- Can be customized according to your needs.<br>- with amazing price.</span>
                             </div>
                         </a></div>
                     <div class="item"><a href="/products/category/2"><img
-                                    src="{{env('QINIU_DOMAIN')}}banner2.jpg">
+                                    src="/image/banner2.jpg">
 
                             <div class="overlay textright"><span class="headline">50~1700C Laboratory<br>Tube Furnace</span><span
                                         class="subline">- Can be customized according to your needs.<br>- with amazing price.</span></div>
                         </a></div>
                     <div class="item"><a
                                 href="/products/category/4"><img
-                                    src="{{env('QINIU_DOMAIN')}}banner3.jpg">
+                                    src="/image/banner3.jpg">
 
                             <div class="overlay textright"><span class="headline">1200~1600C <br>Dental Furnace</span><span
                                         class="subline">- Mainly used for crystallization and sintering of crowns</span></div>
@@ -73,7 +73,7 @@
             <ul class="toc font-small">
                 @foreach($categories as $category)
                     <li><a href="/products/category/{{$category['id']}}"><img
-                                    src="{{env('QINIU_DOMAIN').$category['main_pic']}}?imageView2/2/w/227/h/150"><span>{{$category['name']}}</span></a>
+                                    src="/{{$category['main_pic']}}" alt="$category['name" width="227" height="150"><span>{{$category['name']}}</span></a>
                         <ul>
                             <li><strong>{{$category['max_temp']}}</strong></li>
 

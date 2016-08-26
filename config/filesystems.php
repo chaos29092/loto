@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => 'local',
+    'default' => 'pub',
 
     /*
     |--------------------------------------------------------------------------
@@ -68,6 +68,11 @@ return [
             'secret_key' => 'C51gdhJlDQZdfPZOYG5dAGuF8SGyUXsfJYqJjcmA',                             //SecretKey
             'bucket' => 'kejia',                                 //Bucket名字
         ],
+
+        'pub'=>[
+            'driver'=>'local',
+            'root'=>public_path('app')
+        ]
 
     ],
 
