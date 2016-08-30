@@ -11,24 +11,20 @@ return [
     'home'=>'Home',
     'products'=>'Products',
     'contact_service'=>'Contact & Service',
-    'news'=>'News',
+    'news'=>'FAQ',
     'company'=>'Company',
     'downloads'=>'Downloads',
-    'custom_cases'=>'Custom Cases',
+    'custom_cases'=>'TIPS',
     'standard_products'=>'Standard Products',
-    'customize'=>'Customize',
+    'customize'=>'Application',
 
 //index
-    'kejia_furnace_ltd'=>'Kejia Furnace Ltd.',
+    'kejia_furnace_ltd'=>'LOTO beauty equipment Co Ltd.',
     'address_1'=>'Zhengzhou high tech Development Zone,',
     'address_2'=>'Magnolia Street No.55, China',
     'custom_designed_furnace'=>'Custom Designed Furnace',
-    'index_h1'=>'Kejia Furnace-Laboratory & industrial Furnaces, customer  design service acceptable!',
-    'index_profile'=>'Kejia Furnace is a leading and professional enterprise that specializes in the manufacture of High
-                temp. Laboratory Furnaces worldwide.
-                In order to be more suitable for your requirements, Our customised solutions include products designed
-                to meet specific customer requirements as well as adaptations of a standard model to make it a little
-                larger or smaller or to add more features. The price of our custom service is Amazing!',
+    'index_h1'=>'LOTO, your best beauty equipment!',
+    'index_profile'=>'产品简介，公司简介，一些小推荐',
 //contact    
     'contact_content_1'=>'Kejia Furnace products are exported all over the world, We offer one year of free warranty, Reasonable
                 annual maintenance charges for services after warranty period is over.',

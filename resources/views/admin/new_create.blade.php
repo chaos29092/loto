@@ -27,8 +27,8 @@
                     <div class="form-group">
                         <label for="newTag">分类(*)</label>
                         <select class="form-control" id="newTag" name="tag">
-                            <option value="news" selected="selected">News</option>
-                            <option value="cases">Cases</option>
+                            <option value="news" selected="selected">FAQ</option>
+                            <option value="cases">TIPS</option>
                         </select>
                     </div>
                     <div class="form-group">

@@ -16,7 +16,7 @@
                         <input required type="text" class="form-control" id="categoryName" name="name" value="{{$category['name']}}">
                     </div>
                     <div class="form-group">
-                        <label for="maxTemp">最高温度</label>
+                        <label for="maxTemp">主要参数</label>
                         <input type="text" class="form-control" id="maxTemp" name="max_temp" value="{{$category['max_temp']}}">
                     </div>
                     <div class="form-group">

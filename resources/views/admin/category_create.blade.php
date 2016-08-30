@@ -15,7 +15,7 @@
                         <input required type="text" class="form-control" id="categoryName" name="name" placeholder="产品分类名称">
                     </div>
                     <div class="form-group">
-                        <label for="maxTemp">最高温度</label>
+                        <label for="maxTemp">主要参数</label>
                         <input type="text" class="form-control" id="maxTemp" name="max_temp" value="Max. temp. up to xxx°C">
                     </div>
                     <div class="form-group">

@@ -8,9 +8,9 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'index_title' => 'High Temperature Laboratory Furnaces',
-    'index_description' => 'We supply muffle furnace, tube furnace, CVD & PECVD Systems, Vacuum Furnace & Atmosphere Furnace ,dental furnace, and Can be customized according to your needs.',
-    'index_keywords' => 'muffle furnace, tube furnace, CVD & PECVD Systems, Vacuum Furnace & Atmosphere Furnace, dental furnace',
+    'index_title' => 'Beauty',
+    'index_description' => 'We supply IPL.',
+    'index_keywords' => 'IPL',
 //    /company
     'company_title' => 'Company History & Profile',
     'company_description' => 'The Kejia Furnace brand is synonymous with high quality, leading heat technology in the design and manufacture of laboratory and industrial furnaces',

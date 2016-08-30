@@ -18,8 +18,8 @@
                     <div class="form-group">
                         <label for="newTag">分类(*)</label>
                         <select class="form-control" id="newTag" name="tag">
-                            <option value="news" @if($new['tag']=='news') selected="selected" @endif>News</option>
-                            <option value="cases" @if($new['tag']=='cases') selected="selected" @endif>Cases</option>
+                            <option value="news" @if($new['tag']=='news') selected="selected" @endif>FAQ</option>
+                            <option value="cases" @if($new['tag']=='cases') selected="selected" @endif>TIPS</option>
                         </select>
                     </div>
                     <div class="form-group">

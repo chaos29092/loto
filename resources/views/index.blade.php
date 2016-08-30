@@ -13,44 +13,44 @@
 @section('content')
         <!-- Banner Area -->
 <div class="fullwidth-area grid-100 tablet-grid-100 mobile-grid-100 grid-parent">
-    <div class="content grid-100">
-        <div class="csc-default">
-            <div class="banner">
-                <div class="slideshow" data-speed="1600" data-interval="5000">
+    {{--<div class="content grid-100">--}}
+        {{--<div class="csc-default">--}}
+            {{--<div class="banner">--}}
+                {{--<div class="slideshow" data-speed="1600" data-interval="5000">--}}
 
-                    <div class="item"><a href="/products/category/1"><img
-                                    src="/images/banner1.jpg">
+                    {{--<div class="item"><a href="/products/category/1"><img--}}
+                                    {{--src="/images/banner1.jpg">--}}
 
-                            <div class="overlay textright"><span class="headline">50~1700C Laboratory <br>Muffle Furnace</span><span
-                                        class="subline">- Can be customized according to your needs.<br>- with amazing price.</span>
-                            </div>
-                        </a></div>
-                    <div class="item"><a href="/products/category/2"><img
-                                    src="/image/banner2.jpg">
+                            {{--<div class="overlay textright"><span class="headline">50~1700C Laboratory <br>Muffle Furnace</span><span--}}
+                                        {{--class="subline">- Can be customized according to your needs.<br>- with amazing price.</span>--}}
+                            {{--</div>--}}
+                        {{--</a></div>--}}
+                    {{--<div class="item"><a href="/products/category/2"><img--}}
+                                    {{--src="/image/banner2.jpg">--}}
 
-                            <div class="overlay textright"><span class="headline">50~1700C Laboratory<br>Tube Furnace</span><span
-                                        class="subline">- Can be customized according to your needs.<br>- with amazing price.</span></div>
-                        </a></div>
-                    <div class="item"><a
-                                href="/products/category/4"><img
-                                    src="/image/banner3.jpg">
+                            {{--<div class="overlay textright"><span class="headline">50~1700C Laboratory<br>Tube Furnace</span><span--}}
+                                        {{--class="subline">- Can be customized according to your needs.<br>- with amazing price.</span></div>--}}
+                        {{--</a></div>--}}
+                    {{--<div class="item"><a--}}
+                                {{--href="/products/category/4"><img--}}
+                                    {{--src="/image/banner3.jpg">--}}
 
-                            <div class="overlay textright"><span class="headline">1200~1600C <br>Dental Furnace</span><span
-                                        class="subline">- Mainly used for crystallization and sintering of crowns</span></div>
-                        </a></div>
+                            {{--<div class="overlay textright"><span class="headline">1200~1600C <br>Dental Furnace</span><span--}}
+                                        {{--class="subline">- Mainly used for crystallization and sintering of crowns</span></div>--}}
+                        {{--</a></div>--}}
 
-                </div>
-            </div>
-        </div>
-    </div>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 </div>
 
 <!-- Left Content Area -->
 <div class="content-area sidebar-column grid-parent grid-25 tablet-grid-25 hide-on-mobile">
     <div class="content"><p><b>{{trans('home.kejia_furnace_ltd')}}</b><br>{{trans('home.address_1')}}
             <br>{{trans('home.address_2')}}<br>
-            Tel:  +86-371-67826992<br> Fax: +86-371-67197091<br> <a href="mailto:info@furnace-tech.com" class="mail"
-                                                                    alt="Opens window for sending email">info@furnace-tech.com</a></p>
+            Tel:  +86-371-xxxx<br> Fax: +86-371-xxxx<br> <a href="mailto:" class="mail"
+                                                                    alt="Opens window for sending email">info@loto.com</a></p>
         <hr>
     </div>
     <div class="content">
