@@ -42,7 +42,7 @@ return [
     'others'=>'Others',
     'salutation'=>'Salutation',
     'last_name'=>'Last name',
-    'first_name'=>'First name',
+    'name'=>'Name',
     'address'=>'Address',
     'postcode'=>'Postcode',
     'city'=>'City',
@@ -70,20 +70,10 @@ return [
     'back_to_overview'=>'Back to overview',
 //company
     'company_history'=>'Company History & Profile',
-    'company_content_1'=>'The Kejia Furnace brand is synonymous with high quality, leading heat technology in
-                    the design and manufacture of laboratory and industrial ovens and furnaces up to 1700°C and sold
-                    globally to all over the world. ',
-    'company_content_2'=>'Kejia Furnace is always devoted to satisfying customers with guaranteed quality products, which include
-                1200/1400/1700C Muffle furnaces, 1200/1400/1600C Tube furnaces, (Vacuum) Crucible furnaces, Vacuum Box
-                furnace, Double(Multi) zones Tube furnaces, Multi-position Rotary Tube furnace, Bottom Loading Muffle
-                furnace, etc...',
-    'company_content_3'=>'In order to be more suitable for your requirements, Our customized solutions include products designed
-                to meet specific customer requirements as well as adaptations of a standard model to make it a little
-                larger or smaller or to add more features.',
-    'company_content_4'=>'"Supplying service to customer for life" is our service target. So, quality is our most emphasized, all
-                of our customers service staff has through the professional training, we have the corresponding customer
-                service person for different language. Each of your opinion, It will be collected, prepared, resolved as
-                quickly as possible, welcome to contact us!',
+    'company_content_1'=>'The Loto brand is synonymous with high quality Aesthetic Equipment and sold globally to all over the world.',
+    'company_content_2'=>'Loto was founded in 2015 by serial entrepreneur JunYi, who believes that high-quality Beauty Equipment and Service doesn\'t need to cost a fortune.  Mission use the Internet as a platform to offer our users low cost and professional information and provide our users the most cost-effective beauty equipment and services. ',
+    'company_content_3'=>'We create remarkable beauty equipment, services and with the help of our users. We incorporate their feedback into our product range, which currently includes the equipment of fat reduction, body slimming, hair removal, wrinkle reduction, skin rejuvenation, pigmentation and much more. ',
+    'company_content_4'=>'With more customers choose us, we grow fast and better with them, it\'s a wonderful thing to cooperate with us!',
     'view_and_down'=>'To view and download our company certificates & statements',
     'please_click_here'=>'please click here',
 //down

@@ -41,7 +41,7 @@ return [
     'others'=>'Otros',
     'salutation'=>'título',
     'last_name'=>'Last name',
-    'first_name'=>'First name',
+    'name'=>'Name',
     'address'=>'Dirección',
     'postcode'=>'Postcode',
     'city'=>'Ciudad',

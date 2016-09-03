@@ -31,6 +31,8 @@ Route::get('/downloads/brochures','HomeController@brochures');
 Route::get('/downloads/miscellaneous','HomeController@miscellaneous');
 Route::get('/sitemap.xml','HomeController@sitemap');
 
+Route::post('/submit_post','HomeController@submit_post');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

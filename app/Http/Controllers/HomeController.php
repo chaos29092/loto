@@ -9,6 +9,7 @@ use App\ProductModel;
 use App\TheNew;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -100,6 +101,24 @@ class HomeController extends Controller
     public function miscellaneous()
     {
         return view('downloads_miscellaneous');
+    }
+
+    public function submit_post(Request $request)
+    {
+        $form['name'] = $request->Name;
+        $form['company']=$request->Company;
+        $form['email']=$request->Email;
+        $form['phone']=$request->Phone;
+        $form['description']=$request->Description;
+        $form['pre_url']=$request->pre_url;
+
+        Mail::send('email.mail',['form'=>$form], function ($message) {
+            $message->from('web@aestheticsequipment.com', 'website');
+            $message->to('chaos29092@gmail.com');
+            $message->subject('Website Request');
+        });
+
+        return redirect('/submit_ok');
     }
 
     public function submit_ok()
