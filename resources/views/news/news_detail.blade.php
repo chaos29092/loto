@@ -17,8 +17,8 @@
 <div class="content-area sidebar-column grid-parent grid-25 tablet-grid-25 hide-on-mobile">
     <nav class="nav">
         <ul>
-            <li><a href="/news">{{trans('home.news')}}</a></li>
-            <li><a href="/news/cases">{{trans('home.custom_cases')}}</a></li>
+            <li><a href="/faq">{{trans('home.faq')}}</a></li>
+            <li><a href="/faq/tips">{{trans('home.tips')}}</a></li>
         </ul>
     </nav>
     <div class="tagcloud-container content"></div>
@@ -38,9 +38,9 @@
 
 
                 <p class="back"><a @if($new->tag=='news')
-                                   href="/news"
+                                   href="/faq"
                             @else
-                            href="/news/cases"
+                            href="/faq/tips"
                             @endif>{{trans('home.back_to_overview')}}</a></p>
             </div>
         </div>

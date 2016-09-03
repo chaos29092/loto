@@ -11,10 +11,11 @@ return [
     'home'=>'Home',
     'products'=>'Products',
     'contact_service'=>'Contact & Service',
-    'news'=>'FAQ',
+    'faq_tips'=>'FAQ & TIPS',
+    'faq' =>'FAQ',
     'company'=>'Company',
     'downloads'=>'Downloads',
-    'custom_cases'=>'TIPS',
+    'tips'=>'TIPS',
     'standard_products'=>'Standard Products',
     'customize'=>'Application',
 
@@ -26,7 +27,7 @@ return [
     'index_h1'=>'LOTO, your best beauty equipment!',
     'index_profile'=>'产品简介，公司简介，一些小推荐',
 //contact    
-    'contact_content_1'=>'Kejia Furnace products are exported all over the world, We offer one year of free warranty, Reasonable
+    'contact_content_1'=>'Loto products are exported all over the world, We offer one year of free warranty, Reasonable
                 annual maintenance charges for services after warranty period is over.',
     'contact_content_2'=>'If you need to customize the product, you can ask us in the form below, our engineers will contact you as soon as possible.',
     'contact_form'=>'Contact Form',
@@ -101,9 +102,9 @@ return [
 //submit_ok
     'request_success'=>'Request Success',    
     'submit_1'=>'We are very glad to receive your message, and would reply as soon as possible.',    
-    'submit_2'=>'If you check "Please call me to discuss my request", Please keep the phone open.',    
-    'submit_3'=>'Or check your mailbox after a while.',    
-    'submit_4'=>'If you are urgent, you can use livechat or dial our number: +86-371-67826992',
+    'submit_2'=>'',
+    'submit_3'=>'Please check your mailbox after a while.',
+    'submit_4'=>'If you are urgent, you can use livechat or dial our number: +86-xxxxx',
 //404
     '404'=>'404 PAGE NOT FOUND',
     'not_exist'=>'The page you visited does not exist.',

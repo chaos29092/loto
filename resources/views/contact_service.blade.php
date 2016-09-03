@@ -36,8 +36,8 @@
                     <br><br>
                     {{trans('home.address_1')}} <br>
                     {{trans('home.address_2')}} <br>
-                    Tel: +86 (371) 67826992 <br>
-                    Email: <a href="mailto:info@furnace-tech.com">info@furnace-tech.com</a>
+                    Tel: +86 xxx <br>
+                    Email: <a href="mailto:info@aestheticsequipment.com">info@aestheticsequipment.com</a>
                 </div>
             </div>
 
@@ -89,49 +89,6 @@
                                value="{{trans('home.submit')}}"
                                class="rform-submitbutton"></div>
 
-                    {{--<script>--}}
-                    {{--var mndFileds = new Array('Company', 'First Name', 'Last Name', 'Email', 'Phone', 'Lead Source', 'Industry', 'City', 'Country', 'Description', 'Salutation');--}}
-                    {{--var fldLangVal = new Array('{{trans('home.company')}}', '{{trans('home.first_name')}}', '{{trans('home.last_name')}}', 'Email', 'Phone', 'Lead Source', '{{trans('home.industry')}}', '{{trans('home.city')}}', '{{trans('home.country')}}', '{{trans('home.request')}}', '{{trans('home.salutation')}}');--}}
-                    {{--var name = '';--}}
-                    {{--var email = '';--}}
-
-                    {{--function checkMandatory() {--}}
-                    {{--for (i = 0; i < mndFileds.length; i++) {--}}
-                    {{--var fieldObj = document.forms['WebToLeads1909414000000097283'][mndFileds[i]];--}}
-                    {{--if (fieldObj) {--}}
-                    {{--if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {--}}
-                    {{--if (fieldObj.type == 'file') {--}}
-                    {{--alert('{{trans('home.select_file')}}');--}}
-                    {{--fieldObj.focus();--}}
-                    {{--return false;--}}
-                    {{--}--}}
-                    {{--alert(fldLangVal[i] + ' {{trans('home.can_not_be_empty')}}');--}}
-                    {{--fieldObj.focus();--}}
-                    {{--return false;--}}
-                    {{--} else if (fieldObj.nodeName == 'SELECT') {--}}
-                    {{--if (fieldObj.options[fieldObj.selectedIndex].value == '-None-') {--}}
-                    {{--alert(fldLangVal[i] + ' {{trans('home.can_not_be_empty')}}');--}}
-                    {{--fieldObj.focus();--}}
-                    {{--return false;--}}
-                    {{--}--}}
-                    {{--} else if (fieldObj.type == 'checkbox') {--}}
-                    {{--if (fieldObj.checked == false) {--}}
-                    {{--alert('Please accept  ' + fldLangVal[i]);--}}
-                    {{--fieldObj.focus();--}}
-                    {{--return false;--}}
-                    {{--}--}}
-                    {{--}--}}
-                    {{--try {--}}
-                    {{--if (fieldObj.name == 'Last Name') {--}}
-                    {{--name = fieldObj.value;--}}
-                    {{--}--}}
-                    {{--} catch (e) {--}}
-                    {{--}--}}
-                    {{--}--}}
-                    {{--}--}}
-                    {{--trackVisitor();--}}
-                    {{--}--}}
-                    {{--</script>--}}
                 </form>
             </div>
             <div class="csc-default">

@@ -54,8 +54,8 @@
                                 href="/products">{{trans('home.products')}}</a></li>
                     <li @if(strpos(url()->current(),$_SERVER['SERVER_NAME'].'/contact-service'))class="current"@endif><a
                                 href="/contact-service">{{trans('home.contact_service')}}</a></li>
-                    <li @if(strpos(url()->current(),$_SERVER['SERVER_NAME'].'/news'))class="current"@endif><a
-                                href="/news">{{trans('home.news')}}</a></li>
+                    <li @if(strpos(url()->current(),$_SERVER['SERVER_NAME'].'/faq'))class="current"@endif><a
+                                href="/faq">{{trans('home.faq_tips')}}</a></li>
                     <li @if(strpos(url()->current(),$_SERVER['SERVER_NAME'].'/company'))class="current"@endif><a
                                 href="/company">{{trans('home.company')}}</a></li>
                 </ul>
@@ -71,8 +71,8 @@
                 @endif
                 @if(strpos(url()->current(),$_SERVER['SERVER_NAME'].'/contact-service'))
                     <li><a href="/contact-service">{{trans('home.contact_service')}}</a></li>@endif
-                @if(strpos(url()->current(),$_SERVER['SERVER_NAME'].'/news'))
-                    <li><a href="/news">{{trans('home.news')}}</a></li>@endif
+                @if(strpos(url()->current(),$_SERVER['SERVER_NAME'].'/faq'))
+                    <li><a href="/faq">{{trans('home.faq_tips')}}</a></li>@endif
                 @if(strpos(url()->current(),$_SERVER['SERVER_NAME'].'/company'))
                     <li><a href="/company">{{trans('home.company')}}</a></li>@endif
             </ul>
@@ -93,8 +93,8 @@
         </div>
         <div class="grid-15 tablet-grid-15 hide-on-mobile">
             <ul>
-                <li><a href="/news">{{trans('home.news')}}</a></li>
-                <li><a href="/news/cases">{{trans('home.custom_cases')}}</a></li>
+                <li><a href="/faq">{{trans('home.faq_tips')}}</a></li>
+                <li><a href="/faq/tips">{{trans('home.tips')}}</a></li>
                 <li><a href="/company">{{trans('home.company')}}</a></li>
             </ul>
         </div>

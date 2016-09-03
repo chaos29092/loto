@@ -21,9 +21,9 @@ Route::get('/products/category/{id}','HomeController@category');
 Route::get('/products/{id}','HomeController@product');
 Route::get('/products/{id}/models','HomeController@models');
 
-Route::get('/news','HomeController@news_list');
-Route::get('/news/cases','HomeController@cases_list');
-Route::get('/news/{id}','HomeController@new_detail');
+Route::get('/faq','HomeController@news_list');
+Route::get('/faq/tips','HomeController@cases_list');
+Route::get('/faq/{id}','HomeController@new_detail');
 
 Route::get('/downloads','HomeController@downloads');
 Route::get('/downloads/operating','HomeController@operating');
