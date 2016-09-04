@@ -99,7 +99,7 @@
 
                     <p>
                         <small>{{trans('home.modifications')}}<br> {{trans('home.have_question')}}</small>
-                        <a href="mailto:info@furnace-tech.com">info@furnace-tech.com</a></p>
+                        <a href="mailto:info@aestheticsequipment.com">info@aestheticsequipment.com</a></p>
 
                 </div>
                 <div class="tab-loading"></div>

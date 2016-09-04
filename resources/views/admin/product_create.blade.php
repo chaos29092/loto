@@ -17,12 +17,9 @@
                     <div class="form-group">
                         <label for="categoryId">产品分类(*)</label>
                         <select class="form-control" id="categoryId" name="category_id">
-                            <option value="1" selected="selected">Muffle Furnace</option>
-                            <option value="2">Tube Furnace</option>
-                            <option value="3">CVD & PECVD Systems</option>
-                            <option value="4">Dental Furnace</option>
-                            <option value="5">Vacuum Furnace & Atmosphere Furnace</option>
-                            <option value="6">Customized Furnaces</option>
+                            @foreach($categories as $category)
+                                <option value="{{$category['id']}}">{{$category['name']}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">

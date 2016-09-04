@@ -42,7 +42,7 @@
                     <ul>
                         <li class="label"><span>English</span></li>
                         <li class="current"><a href="/">English</a></li>
-                        <li><a href="http://es.furnace-tech.com">Spain</a></li>
+                        <li><a href="http://es.aestheticsequipment.com">Spain</a></li>
                     </ul>
                 </div>
             </div>
