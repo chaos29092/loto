@@ -31,7 +31,7 @@
 </div>
 <div class="content-area main-column with-sidebar grid-parent grid-75 tablet-grid-75 mobile-grid-100">
     <div class="grid-100 content">
-        <h1>Kejia {{trans('home.furnace')}}</h1>
+        <h1>Loto Products</h1>
 
         <div class="csc-default">
             <ul class="toc font-small">

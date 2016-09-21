@@ -24,8 +24,8 @@ return [
     'address_1'=>'Zhengzhou high tech Development Zone,',
     'address_2'=>'Magnolia Street No.55, China',
     'custom_designed_furnace'=>'Custom Designed Furnace',
-    'index_h1'=>'LOTO, your best beauty equipment!',
-    'index_profile'=>'产品简介，公司简介，一些小推荐',
+    'index_h1'=>'Your Best Aesthetics Equipment.',
+    'index_profile'=>'LOTO has independently researched and developed various equipment for medical treatment and beauty, including Q-switched nd yag laser series, E-light and IPL skin rejuvenation series, Diode laser hair removal series, Co2 fractional laser series and Cryolipolysis, Cavitation vaccum dissolving fat series etc...',
 //contact    
     'contact_content_1'=>'Loto products are exported all over the world, We offer one year of free warranty, Reasonable
                 annual maintenance charges for services after warranty period is over.',
