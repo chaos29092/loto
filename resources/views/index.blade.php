@@ -77,7 +77,6 @@
                             @foreach($products->where('category_id',$category['id'])->all() as $product)
                                 <li><a href="/products/{{$product->id}}">{{$product->name}}</a></li>
                             @endforeach
-                            <li>&nbsp;</li>
                         </ul>
                     </li>
                 @endforeach
