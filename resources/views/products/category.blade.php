@@ -5,9 +5,6 @@
 @section('description')
     {{$category_this['description']}}
 @stop
-@section('keywords')
-    {{$category_this['description']}}
-@stop
 
 @section('breadcrumbs')
     <li><a href="">{{$category_this['name']}}</a></li>

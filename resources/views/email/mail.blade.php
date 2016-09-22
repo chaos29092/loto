@@ -1,6 +1,6 @@
 <html>
 <body>
-<h1>英语网站留言</h1>
+<h1>网站留言</h1>
 
 Name:{{$form['name']}} <br>
 Company:{{$form['company']}} <br>

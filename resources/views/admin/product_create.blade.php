@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="mainPicture">产品主图（使用七牛云，图大于600px比较好，要求.jpg格式）。</label>
+                        <label for="mainPicture">产品主图（图大于600px比较好，要求.jpg格式）。</label>
                         <input name="mainpic" type="file" />
                     </div>
 

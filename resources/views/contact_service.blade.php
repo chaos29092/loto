@@ -36,7 +36,7 @@
                     <br><br>
                     {{trans('home.address_1')}} <br>
                     {{trans('home.address_2')}} <br>
-                    Tel: +86 xxx <br>
+                    Tel: +86 18037187104 <br>
                     Email: <a href="mailto:info@aestheticsequipment.com">info@aestheticsequipment.com</a>
                 </div>
             </div>

@@ -5,9 +5,6 @@
 @section('description')
 {{trans('keywords.index_description')}}
 @stop
-@section('keywords')
-{{trans('keywords.index_keywords')}}
-@stop
 
 
 @section('content')
@@ -47,15 +44,15 @@
 
 <!-- Left Content Area -->
 <div class="content-area sidebar-column grid-parent grid-25 tablet-grid-25 hide-on-mobile">
-    <div class="content"><p><b>{{trans('home.kejia_furnace_ltd')}}</b><br>{{trans('home.address_1')}}
+    <div class="content"><p><b>{{trans('home.company_name')}}</b><br>{{trans('home.address_1')}}
             <br>{{trans('home.address_2')}}<br>
-            Tel:  +86-371-xxxx<br> Fax: +86-371-xxxx<br> <a href="mailto:" class="mail"
-                                                                    alt="Opens window for sending email">info@loto.com</a></p>
+            Tel:  +86-18037187104<br> <a href="mailto:info@aestheticsequipment.com" class="mail"
+                                                                    alt="Opens window for sending email">info@aestheticsequipment.com</a></p>
         <hr>
     </div>
     <div class="content">
         <div>
-            <img src="{{asset('img/home_companies-placeholder.png')}}" alt="{{trans('home.custom_designed_furnace')}}">
+            <img src="{{asset('img/home_companies-placeholder.png')}}">
         </div>
     </div>
     <div class="tagcloud-container content"></div>
@@ -80,6 +77,7 @@
                             @foreach($products->where('category_id',$category['id'])->all() as $product)
                                 <li><a href="/products/{{$product->id}}">{{$product->name}}</a></li>
                             @endforeach
+                            <li>&nbsp;</li>
                         </ul>
                     </li>
                 @endforeach

@@ -8,44 +8,18 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'index_title' => 'Beauty',
-    'index_description' => 'We supply IPL.',
-    'index_keywords' => 'IPL',
+    'index_title' => 'Aesthetics Equipment Manufacturer and Exporter',
+    'index_description' => 'Q-switched nd yag laser series, E-light and IPL skin rejuvenation series, Diode laser hair removal series, Co2 fractional laser series and Cryolipolysis, Cavitation vaccum dissolving fat series etc...',
 //    /company
     'company_title' => 'Company History & Profile',
-    'company_description' => 'The Kejia Furnace brand is synonymous with high quality, leading heat technology in the design and manufacture of laboratory and industrial furnaces',
-    'company_keywords' => 'Kejia Company History & Profile',
+    'company_description' => 'We incorporate their feedback into our product range, which currently includes the equipment of fat reduction, body slimming, hair removal, wrinkle reduction, skin rejuvenation, pigmentation and much more. ',
 //    /contact-service
     'contact_title' => 'Contact and Service',
-    'contact_description' => 'If you need lab furnace, please contact us',
-    'contact_keywords' => 'Kejia Furnace Contact and Service',
-//    /downloads
-    'downloads_title' => 'Downloads',
-    'downloads_description' => 'All important documents are available for download here.',
-    'downloads_keywords' => 'Kejia Furnace Downloads',
-//    /downloads/operating
-    'operating_title' => 'Downloads - Operating',
-    'operating_description' => 'Kejia Furnace manuals',
-    'operating_keywords' => 'Kejia Furnace manuals',
-//    /downloads/brochures
-    'brochures_title' => 'Downloads - Brochures',
-    'brochures_description' => 'Kejia Furnace Brochures',
-    'brochures_keywords' => 'Kejia Furnace Brochures',
-//    /downloads/miscellaneous
-    'miscellaneous_title' => 'Downloads - Miscellaneous',
-    'miscellaneous_description' => 'Kejia Furnace Miscellaneous',
-    'miscellaneous_keywords' => 'Kejia Furnace Miscellaneous',
+    'contact_description' => 'If you need aesthetics equipment, please contact us',
 //    /products
     'products_title' => 'All Products',
-    'products_description' => 'We supply muffle furnace, tube furnace, CVD & PECVD Systems, Vacuum Furnace & Atmosphere Furnace ,dental furnace, and Can be customized according to your needs.',
-    'products_keywords' => 'muffle furnace, tube furnace, CVD & PECVD Systems, Vacuum Furnace & Atmosphere Furnace, dental furnace',
+    'products_description' => 'We supply Q-switched nd yag laser series, E-light and IPL skin rejuvenation series, Diode laser hair removal series, Co2 fractional laser series and Cryolipolysis, Cavitation vaccum dissolving fat series etc...',
 //    /news
     'news_title' => 'News',
-    'news_description' => 'Kejia Furnace News',
-    'news_keywords' => 'Kejia Furnace News',
-//    /news/cases
-    'cases_title' => 'Custom Cases',
-    'cases_description' => 'Kejia Furnace Custom Cases',
-    'cases_keywords' => 'Kejia Furnace Custom Cases',
-
+    'news_description' => 'News Center',
 ];

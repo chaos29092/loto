@@ -5,9 +5,6 @@
 @section('description')
     @if($news->first()->tag =='news'){{trans('keywords.news_description')}}@else {{trans('keywords.cases_description')}} @endif
 @stop
-@section('keywords')
-    @if($news->first()->tag =='news'){{trans('keywords.news_keywords')}}@else {{trans('keywords.cases_keywords')}} @endif
-@stop
 
 @section('content')
     <div class="fullwidth-area grid-100 tablet-grid-100 mobile-grid-100 grid-parent"></div>

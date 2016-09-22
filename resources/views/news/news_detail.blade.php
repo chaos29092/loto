@@ -5,9 +5,6 @@
 @section('description')
 {{$new->profile}}
 @stop
-@section('keywords')
-{{$new->profile}}
-@stop
 
 @section('content')
         <!-- Full-Width Area -->

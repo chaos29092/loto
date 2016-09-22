@@ -5,9 +5,6 @@
 @section('description')
     Models - {{$product_this->description}}
 @stop
-@section('keywords')
-    {{$product_this->keywords}}
-@stop
 
 @section('breadcrumbs')
     <li><a href="/products/category/{{$category_this->id}}">{{$category_this['name']}}</a></li>
@@ -78,13 +75,11 @@
 
                     <p>
                         <strong>{{trans('home.please_note')}}:</strong><br>
-                        <small>- {{trans('home.model_note_1')}}<br>
-                            - {{trans('home.model_note_2')}}</small>
                     </p>
 
                     <p>
                         <small>{{trans('home.model_note_3')}}<br> {{trans('home.have_question')}}
-                        <a href="mailto:info@furnace-tech.com">info@furnace-tech.com</a></small>
+                        <a href="mailto:info@aestheticsequipment.com">info@aestheticsequipment.com</a></small>
                     </p>
                 </div>
             </div>

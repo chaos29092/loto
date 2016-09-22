@@ -9,8 +9,6 @@
     <script async src="{{asset('js/kejia.js')}}" type="text/javascript"></script>
 
     <title>@yield('title') - LOTO</title>
-    <meta name="keywords"
-          content="@yield('keywords')">
     <meta name="description"
           content="@yield('description')">
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
@@ -33,16 +31,11 @@
     <div class="top-area main-column with-sidebar grid-parent grid-75 tablet-grid-75">
         <div class="header grid-parent grid-100 tablet-grid-100 hide-on-mobile">
             <div class="widgets">
-                {{--<form class="search" method="get" action="http://www.carbolite-gero.com/search/">--}}
-                {{--<input type="hidden" name="nocache" value="1">--}}
-                {{--<input type="text" class="search-input" name="search">--}}
-                {{--<button type="submit" class="search-button">Search</button>--}}
-                {{--</form>--}}
                 <div class="language">
                     <ul>
                         <li class="label"><span>English</span></li>
                         <li class="current"><a href="/">English</a></li>
-                        <li><a href="http://es.aestheticsequipment.com">Spain</a></li>
+                        <li><a href="http://es.aestheticsequipment.com/">Spain</a></li>
                     </ul>
                 </div>
             </div>

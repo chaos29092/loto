@@ -5,9 +5,6 @@
 @section('description')
     {{$product_this->description}}
 @stop
-@section('keywords')
-    {{$product_this->keywords}}
-@stop
 
 @section('breadcrumbs')
     <li><a href="/products/category/{{$category_this->id}}">{{$category_this['name']}}</a></li>
@@ -54,15 +51,6 @@
                 </ul>
 
                 <div class="product_details grid-parent tab-content">
-                    <div class="grid-parent grid-66 tablet-grid-66 mobile-grid-100">
-                        <div class="grid-50 tablet-grid-100 mobile-grid-100 grid-parent">
-                            <div class="buttons">
-                                <a href="/contact-service"
-                                   class="button short contact">{{trans('home.contact_us')}}</a>
-                            </div>
-
-                        </div>
-                    </div>
 
                     <div class="side">
                         <div class="mediaContainer">
@@ -102,6 +90,59 @@
                         <a href="mailto:info@aestheticsequipment.com">info@aestheticsequipment.com</a></p>
 
                 </div>
+
+                <div class="csc-default">
+                    <div class="csc-header csc-header-n4"><h1>{{trans('home.contact_form')}}</h1></div>
+                    <form action='/submit_post' method='POST' accept-charset='UTF-8'>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type='text' style='display:none;' id='Pre_url' name='pre_url' value="{{url()->current()}}">
+
+
+                        <div class="rform rform-inputrow rform-required">
+                            <div class="rform-labelfield rform-required"><label
+                                        for="mailformCompany/Organisation">{{trans('home.company_organisation')}}*:</label>
+                            </div>
+                            <input type="text" name="Company" id="mailformCompany/Organisation" size="20"
+                                   value="" class="rform-input"></div>
+
+                        <div class="rform rform-inputrow rform-required">
+                            <div class="rform-labelfield rform-required"><label
+                                        for="mailformFirst_Name">{{trans('home.name')}}*:</label></div>
+                            <input type="text" name="Name" id="mailformFirst_Name" size="20" value=""
+                                   class="rform-input"></div>
+
+
+                        <div class="rform rform-inputrow rform-required">
+                            <div class="rform-labelfield rform-required"><label for="mailformEmail">E-mail*</label></div>
+                            <input type="text" name="Email" id="mailformEmail" size="20" value="" class="rform-input"></div>
+                        <div class="rform rform-inputrow rform-required">
+                            <div class="rform-labelfield rform-required"><label for="mailformPhone">Phone:</label></div>
+                            <input type="text" name="Phone" id="mailformPhone" size="20" value="" class="rform-input"></div>
+                        <div class="rform rform-inputrow">
+                            <div class="rform-label">{{trans('home.request')}}</div>
+                            <div class=="clear"><!-- ! --></div>
+                        </div>
+                        <div class="rform rform-inputrow rform-comment">
+                            <div class="rform-labelfield"><i>{{trans('home.contact_request')}}</i></div>
+                            <div class=="clear"><!-- ! --></div>
+                        </div>
+                        <div class="rform rform-inputrow rform-required">
+                            <div class="rform-labelfield rform-required"><label
+                                        for="mailformRequest">{{trans('home.your_request')}}*:</label>
+                            </div>
+                            <textarea name="Description" id="mailformRequest" cols="20" rows="8"></textarea></div>
+
+
+                        <div class="rform rform-inputrow">
+                            <div class="rform-labelfield"></div>
+                            <input type="submit" name="formtype_mail" id="mailformformtype_mail"
+                                   value="{{trans('home.submit')}}"
+                                   class="rform-submitbutton"></div>
+
+                    </form>
+                </div>
+
+
                 <div class="tab-loading"></div>
             </div>
         </div>

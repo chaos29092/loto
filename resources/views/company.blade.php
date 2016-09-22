@@ -5,9 +5,6 @@
 @section('description')
 {{trans('keywords.company_description')}}
 @stop
-@section('keywords')
-{{trans('keywords.company_keywords')}}
-@stop
 
 @section('content')
 

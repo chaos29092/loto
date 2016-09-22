@@ -5,9 +5,6 @@
 @section('description')
     We are very glad to receive your message, and would reply as soon as possible.
 @stop
-@section('keywords')
-
-@stop
 
     @section('content')
 
